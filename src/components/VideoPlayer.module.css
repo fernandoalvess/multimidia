@@ -1,0 +1,119 @@
+
+.containerDoPlayer {
+    background-color: #242424;
+    border-radius: 15px;
+    padding: 30px;
+    width: 350px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+}
+
+.infoSuperior {
+    position: absolute;
+    top: 20px;
+    left: 25px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #e0e0e0;
+    font-size: 14px;
+}
+
+.identificadorSuperior {
+    font-weight: 500;
+}
+
+.telaDoVideo {
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-top: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    background-color: #000;
+    cursor: pointer; 
+}
+
+.informacoesDaMusica {
+    text-align: center;
+}
+
+.tituloDaMusica {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: #ffffff;
+}
+
+.nomeDoArtista {
+    font-size: 16px;
+    color: #b3b3b3;
+    margin-top: 0;
+}
+
+.containerBarraDeProgresso {
+    width: 100%;
+    height: 6px;
+    background-color: #444444;
+    border-radius: 3px;
+    margin-top: 10px;
+    position: relative;
+    cursor: pointer; 
+}
+
+.barraDeProgresso {
+    height: 100%;
+    background-color: #005bac;
+    border-radius: 3px;
+}
+
+.marcacoesDeTempo {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #b3b3b3;
+}
+
+.controles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.botaoDeControle {
+    background: none;
+    border: none;
+    color: #e0e0e0;
+    font-size: 22px;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+}
+
+.botaoDeControle:hover {
+    color: #ffffff;
+}
+
+.botaoDePlay {
+    background-color: #005bac;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    color: #ffffff;
+    box-shadow: 0 5px 15px rgba(0, 0, 209, 0.4);
+}
+
+.botaoDePlay:hover {
+    background-color: #3333ff;
+}
