@@ -26,10 +26,6 @@ const VideoPlayer = ({ video }: VideoPlayerProps) => {
         videoRef.current.load();
         setIsPlaying(false);
         setCurrentTime(0);
-        //const playPromise = videoRef.current.play();
-        // if (playPromise !== undefined) {
-        //   playPromise.then(() => setIsPlaying(true)).catch(error => console.error("Autoplay failed", error));
-        // }
       }
     }, [video]);
 
