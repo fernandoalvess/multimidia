@@ -1,0 +1,55 @@
+.listContainer {
+  width: 350px;
+  max-height: 400px;
+  overflow-y: auto;
+  background-color: #1c1c1c;
+  padding: 15px;
+  border-radius: 15px;
+}
+
+.listTitle {
+  color: #fff;
+  margin: 0 0 15px 5px;
+  font-size: 1.1rem;
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  list-style: none;
+}
+
+.listItem:hover {
+  background-color: #333;
+}
+
+.listItem.active {
+  background-color: #005bac;
+}
+
+.thumbnail {
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.videoInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.videoTitle {
+  color: #fff;
+  font-weight: 500;
+  margin: 0;
+}
+
+.videoArtist {
+  color: #b3b3b3;
+  font-size: 0.8rem;
+  margin: 0;
+}

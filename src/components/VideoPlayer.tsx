@@ -1,12 +1,16 @@
-// src/components/VideoPlayer.tsx
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import styles from './VideoPlayer.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay, faPause, faBackward, faForward, faVolumeUp, faVolumeMute } from '@fortawesome/free-solid-svg-icons';
+import { Video } from '@/data/videos';
 
-const VideoPlayer = () => {
+interface VideoPlayerProps {
+    video: Video | null;
+}
+
+const VideoPlayer = ({ video }: VideoPlayerProps) => {
     const videoRef = useRef<HTMLVideoElement>(null);
     const progressRef = useRef<HTMLDivElement>(null);
 
@@ -14,6 +18,20 @@ const VideoPlayer = () => {
     const [isMuted, setIsMuted] = useState(false);
     const [duration, setDuration] = useState(0);
     const [currentTime, setCurrentTime] = useState(0);
+
+    useEffect(() => {
+      if (video && videoRef.current) {
+        videoRef.current.poster = video.posterSrc;
+        setIsPlaying(false); 
+        videoRef.current.load();
+        setIsPlaying(false);
+        setCurrentTime(0);
+        //const playPromise = videoRef.current.play();
+        // if (playPromise !== undefined) {
+        //   playPromise.then(() => setIsPlaying(true)).catch(error => console.error("Autoplay failed", error));
+        // }
+      }
+    }, [video]);
 
     const formatTime = (timeInSeconds: number) => {
         const minutes = Math.floor(timeInSeconds / 60);
@@ -71,6 +89,10 @@ const VideoPlayer = () => {
 
     const progressPercentage = duration > 0 ? (currentTime / duration) * 100 : 0;
 
+    if (!video) {
+      return <div>Selecione um vídeo para começar.</div>;
+    }
+
     return (
         <div className={styles.containerDoPlayer}>
             <div className={styles.infoSuperior}>
@@ -86,14 +108,15 @@ const VideoPlayer = () => {
                 onTimeUpdate={handleTimeUpdate}
                 onPlay={() => setIsPlaying(true)}
                 onPause={() => setIsPlaying(false)}
+                key={video.id}
             >
-                <source src="/assets/videomanoelgomes.mp4" type="video/mp4" />
+                <source src={video.videoSrc} type="video/mp4" />
                 Seu navegador não suporta a tag de vídeo.
             </video>
 
             <div className={styles.informacoesDaMusica}>
-                <h2 className={styles.tituloDaMusica}> Ceiça - O Clipe</h2>
-                <p className={styles.nomeDoArtista}>Manoel Gomes</p>
+                <h2 className={styles.tituloDaMusica}>{video.title}</h2> {/* DADO DINÂMICO */}
+                <p className={styles.nomeDoArtista}>{video.artist}</p> {/* DADO DINÂMICO */}
             </div>
 
             <div
