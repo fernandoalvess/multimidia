@@ -12,14 +12,21 @@ export default function Home() {
     setCurrentVideo(video);
   };
 
+  const handleNextVideo = () => {
+    const currentIndex = videos.findIndex(video => video.id === currentVideo.id);
+    const nextIndex = (currentIndex + 1) % videos.length;
+    setCurrentVideo(videos[nextIndex]);
+  };
+
   return (
     <main style={{ display: 'flex', gap: '40px', alignItems: 'flex-start' }}>
-      <VideoPlayer video={currentVideo} />
       <VideoList
         videos={videos}
         onVideoSelect={handleVideoSelect}
         currentVideoId={currentVideo?.id}
       />
+      <VideoPlayer video={currentVideo} 
+      onNextVideo={handleNextVideo}/>
     </main>
   );
 }

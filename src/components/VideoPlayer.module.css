@@ -79,41 +79,86 @@
     color: #b3b3b3;
 }
 
-.controles {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    width: 100%;
-    margin-top: 15px;
+.controlesContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px; 
+  margin-top: 15px;
+}
+
+.controlesPrincipais {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
 }
 
 .botaoDeControle {
-    background: none;
-    border: none;
-    color: #e0e0e0;
-    font-size: 22px;
-    cursor: pointer;
-    transition: color 0.2s ease-in-out;
+  background: none;
+  border: none;
+  color: #e0e0e0;
+  font-size: 22px;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
 }
 
 .botaoDeControle:hover {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 .botaoDePlay {
-    background-color: #005bac;
-    border-radius: 50%;
-    width: 55px;
-    height: 55px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 28px;
-    color: #ffffff;
-    box-shadow: 0 5px 15px rgba(0, 0, 209, 0.4);
+  background-color: #005bac;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  color: #ffffff;
+  box-shadow: 0 5px 15px rgba(0, 0, 209, 0.4);
+  flex-shrink: 0;
 }
 
 .botaoDePlay:hover {
-    background-color: #3333ff;
+  background-color: #3333ff;
+}
+
+.containerDeVolume {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 60%; 
+}
+
+.sliderDeVolume {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%; 
+  height: 5px;
+  border-radius: 5px;
+  outline: none;
+  transition: opacity 0.2s;
+}
+
+.sliderDeVolume::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.sliderDeVolume::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  background: #fff;
+  border-radius: 50%;
+  cursor: pointer;
 }
